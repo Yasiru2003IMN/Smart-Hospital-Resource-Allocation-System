@@ -5,10 +5,10 @@ int main()
 {
     printf("Smart Hospital & Resource Allocation System\n");
      printf("\nDoctor Specialties:\n");
-    printf("1. General Practice - Rs.1500\n");
-    printf("2. Paediatrics      - Rs.2500\n");
-    printf("3. Cardiology       - Rs.4500\n");
-    printf("4. Neurology        - Rs.5000\n");
+    printf("1. General Practice - Rs.1500 - 15 min - Daily Cap: 30\n");
+    printf("2. Paediatrics      - Rs.2500 - 20 min - Daily Cap: 20\n");
+    printf("3. Cardiology       - Rs.4500 - 30 min - Daily Cap: 12\n");
+    printf("4. Neurology        - Rs.5000 - 30 min - Daily Cap: 10\n");
 
     printf("\nHospital Wards:\n");
 
