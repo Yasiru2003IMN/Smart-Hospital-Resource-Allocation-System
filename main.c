@@ -3,6 +3,7 @@
 
 int main()
 {
+    int bedOccupancy[4][20] = {0};
     printf("Smart Hospital & Resource Allocation System\n");
      printf("\nDoctor Specialties:\n");
     printf("1. General Practice - Rs.1500 - 15 min - Daily Cap: 30\n");
