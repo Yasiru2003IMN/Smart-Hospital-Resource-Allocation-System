@@ -8,6 +8,8 @@ int main()
     int age;
     int triageLevel;
     int specialty;
+    int wardAdmission;
+    int wardID;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -19,10 +21,10 @@ int main()
 
     printf("\nHospital Wards:\n");
 
-printf("1] General Ward    - Rs.3000/day    - Capacity: 20\n");
-printf("2] Paediatric Ward - Rs.6000/day    - Capacity: 10\n");
-printf("3] Surgical Ward   - Rs.12000/day   - Capacity: 10\n");
-printf("4] ICU             - Rs.25000/day   - Capacity: 5\n");
+    printf("1] General Ward    - Rs.3000/day    - Capacity: 20\n");
+    printf("2] Paediatric Ward - Rs.6000/day    - Capacity: 10\n");
+    printf("3] Surgical Ward   - Rs.12000/day   - Capacity: 10\n");
+    printf("4] ICU             - Rs.25000/day   - Capacity: 5\n");
 
     printf("\nPlease Enter patient Name: ");
     scanf(" %s", &patientName);
@@ -33,8 +35,27 @@ printf("4] ICU             - Rs.25000/day   - Capacity: 5\n");
     printf("\nPlease Enter the triage level (1-Normal, 2-Urgent, 3-Critical): ");
     scanf("%d", &triageLevel);
 
-    printf("\nEnter the specialty(1,2,3,4): ");
+    printf("1. General Practice\n");
+    printf("2. Paediatrics\n");
+    printf("3. Cardiology\n");
+    printf("4. Neurology\n");
+    printf("\nEnter the specialty(1,2,3,4):");
+
     scanf("%d", &specialty);
+
+    printf("\nWhat Do you want ward admission? (1-Yes, 0-No): ");
+    scanf("%d", &wardAdmission);
+    if (wardAdmission == 1)
+    {
+    printf("\nSelect ward:\n");
+    printf("1. General Ward\n");
+    printf("2. Paediatric Ward\n");
+    printf("3. Surgical Ward\n");
+    printf("4. ICU\n");
+
+    printf("Enter ward ID: ");
+    scanf("%d", &wardID);
+    }
 
 
     return 0;
