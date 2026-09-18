@@ -14,6 +14,8 @@ int main()
     int queueCount =0;
     int averageTime;
     int waitingTime;
+    int baseFee;
+    int emergencySurcharge;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -43,7 +45,7 @@ int main()
     printf("2. Paediatrics\n");
     printf("3. Cardiology\n");
     printf("4. Neurology\n");
-    printf("\nEnter the specialty(1,2,3,4):");
+    printf("\nEnter the specialty(1/2/3/4):");
 
     scanf("%d", &specialty);
     if (specialty == 1)
@@ -61,6 +63,37 @@ int main()
     waitingTime = queueCount * averageTime;
     queueCount++;
     printf("Please Waiting: %d minutes\n", waitingTime);
+
+    if (specialty == 1)
+    {
+    baseFee = 1500;
+    }
+    else if (specialty == 2)
+    {
+    baseFee = 2500;
+    }
+    else if (specialty == 3)
+    {
+    baseFee = 4500;
+    }
+    else if (specialty == 4)
+    {
+    baseFee = 5000;
+    }
+    if (triageLevel == 1)
+    {
+    emergencySurcharge = 0;
+    }
+    else if (triageLevel == 2)
+    {
+    emergencySurcharge = baseFee * 20 / 100;
+    }
+    else if (triageLevel == 3)
+    {
+    emergencySurcharge = baseFee * 50 / 100;
+    }
+    printf("The Base Consultation Fee is: Rs.%d\n", baseFee);
+    printf("The Emergency Surcharge is: Rs.%d\n", emergencySurcharge);
 
 
     printf("\nWhat Do you want ward admission? (1-Yes, 0-No): ");
