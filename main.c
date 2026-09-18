@@ -11,6 +11,9 @@ int main()
     int wardAdmission;
     int wardID;
     int daysAdmitted;
+    int queueCount =0;
+    int averageTime;
+    int waitingTime;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -43,6 +46,22 @@ int main()
     printf("\nEnter the specialty(1,2,3,4):");
 
     scanf("%d", &specialty);
+    if (specialty == 1)
+    {
+    averageTime = 15;
+    }
+    else if (specialty == 2)
+    {
+    averageTime = 20;
+    }
+    else
+    {
+    averageTime = 30;
+    }
+    waitingTime = queueCount * averageTime;
+    queueCount++;
+    printf("Please Waiting: %d minutes\n", waitingTime);
+
 
     printf("\nWhat Do you want ward admission? (1-Yes, 0-No): ");
     scanf("%d", &wardAdmission);
