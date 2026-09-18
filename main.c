@@ -6,6 +6,7 @@ int main()
     int bedOccupancy[4][20] = {0};
     char patientName[50];
     int age;
+    int triageLevel;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -27,6 +28,9 @@ printf("4] ICU             - Rs.25000/day   - Capacity: 5\n");
 
     printf("\nEnter age: ");
     scanf("%d", &age);
+
+    printf("\nPlease Enter the triage level (1-Normal, 2-Urgent, 3-Critical): ");
+    scanf("%d", &triageLevel);
 
 
     return 0;
