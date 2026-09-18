@@ -5,6 +5,7 @@ int main()
 {
     int bedOccupancy[4][20] = {0};
     char patientName[50];
+    int age;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -21,8 +22,12 @@ printf("2] Paediatric Ward - Rs.6000/day    - Capacity: 10\n");
 printf("3] Surgical Ward   - Rs.12000/day   - Capacity: 10\n");
 printf("4] ICU             - Rs.25000/day   - Capacity: 5\n");
 
-     printf("\nPlease Enter patient Name: ");
+    printf("\nPlease Enter patient Name: ");
     scanf(" %s", &patientName);
+
+    printf("\nEnter age: ");
+    scanf("%d", &age);
+
 
     return 0;
 }
