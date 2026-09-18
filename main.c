@@ -10,6 +10,7 @@ int main()
     int specialty;
     int wardAdmission;
     int wardID;
+    int daysAdmitted;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -55,6 +56,12 @@ int main()
 
     printf("Enter ward ID: ");
     scanf("%d", &wardID);
+    printf("Enter number of days admitted: ");
+    scanf("%d", &daysAdmitted);
+    }
+    else
+    {
+    daysAdmitted = 0;
     }
 
 
