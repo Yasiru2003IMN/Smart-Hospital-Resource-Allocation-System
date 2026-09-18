@@ -16,6 +16,7 @@ int main()
     int waitingTime;
     int baseFee;
     int emergencySurcharge;
+    int wardCost;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -115,7 +116,30 @@ int main()
     {
     daysAdmitted = 0;
     }
-
+    if (wardAdmission == 1)
+    {
+    if (wardID == 1)
+    {
+        wardCost = daysAdmitted * 3000;
+    }
+    else if (wardID == 2)
+    {
+        wardCost = daysAdmitted * 6000;
+    }
+    else if (wardID == 3)
+    {
+        wardCost = daysAdmitted * 12000;
+    }
+    else if (wardID == 4)
+    {
+        wardCost = daysAdmitted * 25000;
+    }
+    }
+    else
+    {
+    wardCost = 0;
+    }
+    printf("Your wardCost is:Rs.%d\n",wardCost);
 
     return 0;
 }
