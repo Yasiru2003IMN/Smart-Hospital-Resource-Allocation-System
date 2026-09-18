@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define MAX_PATIENTS 100
 
 int main()
 {
@@ -18,6 +19,13 @@ int main()
     int emergencySurcharge;
     int wardCost;
     int discount;
+    int grossTotal;
+    int finalPayable;
+    int patientCount = 0;
+    char patientNames[MAX_PATIENTS][50];
+    int patientAges[MAX_PATIENTS];
+    int patientTriage[MAX_PATIENTS];
+    int patientSpecialty[MAX_PATIENTS];
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -34,22 +42,32 @@ int main()
     printf("3] Surgical Ward   - Rs.12000/day   - Capacity: 10\n");
     printf("4] ICU             - Rs.25000/day   - Capacity: 5\n");
 
-    printf("\nPlease Enter patient Name: ");
-    scanf(" %s", &patientName);
+    printf("\nEnter number of patients: ");
+    scanf("%d", &patientCount);
 
-    printf("\nEnter age: ");
-    scanf("%d", &age);
+    for (int i = 0; i < patientCount; i++)
+    {
+    printf("\nPatient %d\n", i + 1);
 
-    printf("\nPlease Enter the triage level (1-Normal, 2-Urgent, 3-Critical): ");
-    scanf("%d", &triageLevel);
+    printf("Enter patient name: ");
+    scanf(" %[^\n]", &patientNames[i]);
 
+    printf("Enter age: ");
+    scanf("%d", &patientAges[i]);
+
+    printf("Enter triage level (1-Normal, 2-Urgent, 3-Critical): ");
+    scanf("%d", &patientTriage[i]);
+
+    printf("\nSelect doctor specialty:\n");
     printf("1. General Practice\n");
     printf("2. Paediatrics\n");
     printf("3. Cardiology\n");
     printf("4. Neurology\n");
-    printf("\nEnter the specialty(1/2/3/4):");
 
-    scanf("%d", &specialty);
+    printf("Enter specialty: ");
+    scanf("%d", &patientSpecialty[i]);
+    }
+
     if (specialty == 1)
     {
     averageTime = 15;
@@ -151,6 +169,12 @@ int main()
     discount = 0;
     }
     printf("Age Subsidy Discount: Rs.%d\n", discount);
+
+    grossTotal = baseFee + emergencySurcharge + wardCost;
+    finalPayable = grossTotal - discount;
+
+    printf("Gross Total: Rs.%d\n", grossTotal);
+    printf("Final Payable: Rs.%d\n", finalPayable);
 
     return 0;
 }
