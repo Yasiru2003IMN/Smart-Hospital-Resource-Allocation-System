@@ -17,6 +17,7 @@ int main()
     int baseFee;
     int emergencySurcharge;
     int wardCost;
+    int discount;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -140,6 +141,16 @@ int main()
     wardCost = 0;
     }
     printf("Your wardCost is:Rs.%d\n",wardCost);
+
+    if (age < 5 || age > 65)
+    {
+    discount = (baseFee + emergencySurcharge + wardCost) * 15 / 100;
+    }
+    else
+    {
+    discount = 0;
+    }
+    printf("Age Subsidy Discount: Rs.%d\n", discount);
 
     return 0;
 }
