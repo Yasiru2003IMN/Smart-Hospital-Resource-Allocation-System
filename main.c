@@ -26,6 +26,9 @@ int main()
     int patientAges[MAX_PATIENTS];
     int patientTriage[MAX_PATIENTS];
     int patientSpecialty[MAX_PATIENTS];
+    int patientWardAdmission[MAX_PATIENTS];
+    int patientWardID[MAX_PATIENTS];
+    int patientDaysAdmitted[MAX_PATIENTS];
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -66,13 +69,12 @@ int main()
 
     printf("Enter specialty: ");
     scanf("%d", &patientSpecialty[i]);
-    }
 
-    if (specialty == 1)
+    if (patientSpecialty[i] == 1)
     {
     averageTime = 15;
     }
-    else if (specialty == 2)
+    else if (patientSpecialty[i] == 2)
     {
     averageTime = 20;
     }
@@ -84,41 +86,42 @@ int main()
     queueCount++;
     printf("Please Waiting: %d minutes\n", waitingTime);
 
-    if (specialty == 1)
+
+    if (patientSpecialty[i] == 1)
     {
     baseFee = 1500;
     }
-    else if (specialty == 2)
+    else if (patientSpecialty[i] == 2)
     {
     baseFee = 2500;
     }
-    else if (specialty == 3)
+    else if (patientSpecialty[i] == 3)
     {
     baseFee = 4500;
     }
-    else if (specialty == 4)
+    else if (patientSpecialty[i] == 4)
     {
     baseFee = 5000;
     }
-    if (triageLevel == 1)
+    if (patientTriage[i] == 1)
     {
     emergencySurcharge = 0;
     }
-    else if (triageLevel == 2)
+    else if (patientTriage[i] == 2)
     {
     emergencySurcharge = baseFee * 20 / 100;
     }
-    else if (triageLevel == 3)
+    else if (patientTriage[i] == 3)
     {
     emergencySurcharge = baseFee * 50 / 100;
     }
     printf("The Base Consultation Fee is: Rs.%d\n", baseFee);
     printf("The Emergency Surcharge is: Rs.%d\n", emergencySurcharge);
 
+    printf("\nDo you want ward admission? (1-Yes, 0-No): ");
+    scanf("%d", &patientWardAdmission[i]);
 
-    printf("\nWhat Do you want ward admission? (1-Yes, 0-No): ");
-    scanf("%d", &wardAdmission);
-    if (wardAdmission == 1)
+    if (patientWardAdmission[i] == 1)
     {
     printf("\nSelect ward:\n");
     printf("1. General Ward\n");
@@ -127,13 +130,16 @@ int main()
     printf("4. ICU\n");
 
     printf("Enter ward ID: ");
-    scanf("%d", &wardID);
+    scanf("%d", &patientWardID[i]);
+
     printf("Enter number of days admitted: ");
-    scanf("%d", &daysAdmitted);
+    scanf("%d", &patientDaysAdmitted[i]);
     }
     else
     {
-    daysAdmitted = 0;
+    patientWardID[i] = 0;
+    patientDaysAdmitted[i] = 0;
+    }
     }
     if (wardAdmission == 1)
     {
