@@ -266,7 +266,17 @@ int main()
             patientFinalPayable[j + 1] = tempFinalPayable;
         }
      }
+
     }
+    printf("\n--- Patients by Priority ---\n");
+
+     for (int i = 0; i < patientCount; i++)
+     {
+     printf("\nPatient %d\n", i + 1);
+     printf("Name: %s\n", patientNames[i]);
+     printf("Age: %d\n", patientAges[i]);
+     printf("Triage Level: %d\n", patientTriage[i]);
+     }
 
     return 0;
 }
