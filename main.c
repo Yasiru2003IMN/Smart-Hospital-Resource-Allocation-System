@@ -32,6 +32,7 @@ int main()
     int patientWaitingTime[MAX_PATIENTS];
     int patientBaseFee[MAX_PATIENTS];
     int patientEmergencySurcharge[MAX_PATIENTS];
+    int patientWardCost[MAX_PATIENTS];
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -142,31 +143,32 @@ int main()
     patientWardID[i] = 0;
     patientDaysAdmitted[i] = 0;
     }
+
+    if (patientWardAdmission[i] == 1)
+    {
+    if (patientWardID[i] == 1)
+    {
+        patientWardCost[i] = patientDaysAdmitted[i] * 3000;
     }
-    if (wardAdmission == 1)
+    else if (patientWardID[i] == 2)
     {
-    if (wardID == 1)
-    {
-        wardCost = daysAdmitted * 3000;
+        patientWardCost[i] = patientDaysAdmitted[i] * 6000;
     }
-    else if (wardID == 2)
+    else if (patientWardID[i] == 3)
     {
-        wardCost = daysAdmitted * 6000;
+        patientWardCost[i] = patientDaysAdmitted[i] * 12000;
     }
-    else if (wardID == 3)
+    else if (patientWardID[i] == 4)
     {
-        wardCost = daysAdmitted * 12000;
-    }
-    else if (wardID == 4)
-    {
-        wardCost = daysAdmitted * 25000;
+        patientWardCost[i] = patientDaysAdmitted[i] * 25000;
     }
     }
     else
     {
-    wardCost = 0;
+    patientWardCost[i] = 0;
     }
-    printf("Your wardCost is:Rs.%d\n",wardCost);
+    printf("Your wardCost is:Rs.%d\n",patientWardCost[i]);
+    }
 
     if (age < 5 || age > 65)
     {
