@@ -33,6 +33,7 @@ int main()
     int patientBaseFee[MAX_PATIENTS];
     int patientEmergencySurcharge[MAX_PATIENTS];
     int patientWardCost[MAX_PATIENTS];
+    int patientDiscount[MAX_PATIENTS];
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -118,8 +119,8 @@ int main()
     {
     patientEmergencySurcharge[i] = patientBaseFee[i] * 50 / 100;
     }
-    printf("The Base Consultation Fee is: Rs.%d\n", patientBaseFee[i]);
-    printf("The Emergency Surcharge is: Rs.%d\n", patientEmergencySurcharge[i]);
+    printf("The Base Consultation Fee is: LKR.%d\n", patientBaseFee[i]);
+    printf("The Emergency Surcharge is: LKR.%d\n", patientEmergencySurcharge[i]);
 
     printf("\nDo you want ward admission? (1-Yes, 0-No): ");
     scanf("%d", &patientWardAdmission[i]);
@@ -162,23 +163,23 @@ int main()
     {
         patientWardCost[i] = patientDaysAdmitted[i] * 25000;
     }
-    }
     else
     {
     patientWardCost[i] = 0;
     }
-    printf("Your wardCost is:Rs.%d\n",patientWardCost[i]);
+    printf("Your wardCost is:LKR.%d\n",patientWardCost[i]);
     }
 
-    if (age < 5 || age > 65)
+    if (patientAges[i] < 5 || patientAges[i] > 65)
     {
-    discount = (baseFee + emergencySurcharge + wardCost) * 15 / 100;
+    patientDiscount[i] =(patientBaseFee[i] +patientEmergencySurcharge[i] +patientWardCost[i]) * 15 / 100;
     }
     else
     {
-    discount = 0;
+    patientDiscount[i] = 0;
     }
-    printf("Age Subsidy Discount: Rs.%d\n", discount);
+    printf("Age Subsidy Discount: LKR.%d\n", patientDiscount[i]);
+    }
 
     grossTotal = baseFee + emergencySurcharge + wardCost;
     finalPayable = grossTotal - discount;
