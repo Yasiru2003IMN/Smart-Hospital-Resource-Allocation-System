@@ -30,6 +30,7 @@ int main()
     int patientWardID[MAX_PATIENTS];
     int patientDaysAdmitted[MAX_PATIENTS];
     int patientWaitingTime[MAX_PATIENTS];
+    int patientBaseFee[MAX_PATIENTS];
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -89,19 +90,19 @@ int main()
 
     if (patientSpecialty[i] == 1)
     {
-    baseFee = 1500;
+    patientBaseFee[i] = 1500;
     }
     else if (patientSpecialty[i] == 2)
     {
-    baseFee = 2500;
+    patientBaseFee[i] = 2500;
     }
     else if (patientSpecialty[i] == 3)
     {
-    baseFee = 4500;
+    patientBaseFee[i] = 4500;
     }
     else if (patientSpecialty[i] == 4)
     {
-    baseFee = 5000;
+    patientBaseFee[i] = 5000;
     }
     if (patientTriage[i] == 1)
     {
