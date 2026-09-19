@@ -53,6 +53,8 @@ int main()
     int normalCount = 0;
     int urgentCount = 0;
     int criticalCount = 0;
+    int totalRevenue = 0;
+    int totalDiscounts = 0;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -221,6 +223,11 @@ int main()
         criticalCount++;
     }
     }
+    for (int i = 0; i < patientCount; i++)
+    {
+    totalRevenue += patientFinalPayable[i];
+    totalDiscounts += patientDiscount[i];
+    }
     for (int i = 0; i < patientCount - 1; i++)
     {
     for (int j = 0; j < patientCount - i - 1; j++)
@@ -299,6 +306,8 @@ int main()
      printf("Normal Patients: %d\n", normalCount);
      printf("Urgent Patients: %d\n", urgentCount);
      printf("Critical Patients: %d\n", criticalCount);
+     printf("Total Revenue: Rs.%d\n", totalRevenue);
+     printf("Total Discounts: Rs.%d\n", totalDiscounts);
 
     return 0;
 }
