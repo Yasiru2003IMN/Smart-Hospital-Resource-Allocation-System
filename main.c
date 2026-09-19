@@ -31,6 +31,7 @@ int main()
     int patientDaysAdmitted[MAX_PATIENTS];
     int patientWaitingTime[MAX_PATIENTS];
     int patientBaseFee[MAX_PATIENTS];
+    int patientEmergencySurcharge[MAX_PATIENTS];
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -106,18 +107,18 @@ int main()
     }
     if (patientTriage[i] == 1)
     {
-    emergencySurcharge = 0;
+    patientEmergencySurcharge[i] = 0;
     }
     else if (patientTriage[i] == 2)
     {
-    emergencySurcharge = baseFee * 20 / 100;
+    patientEmergencySurcharge[i] = patientBaseFee[i] * 20 / 100;
     }
     else if (patientTriage[i] == 3)
     {
-    emergencySurcharge = baseFee * 50 / 100;
+    patientEmergencySurcharge[i] = patientBaseFee[i] * 50 / 100;
     }
-    printf("The Base Consultation Fee is: Rs.%d\n", baseFee);
-    printf("The Emergency Surcharge is: Rs.%d\n", emergencySurcharge);
+    printf("The Base Consultation Fee is: Rs.%d\n", patientBaseFee[i]);
+    printf("The Emergency Surcharge is: Rs.%d\n", patientEmergencySurcharge[i]);
 
     printf("\nDo you want ward admission? (1-Yes, 0-No): ");
     scanf("%d", &patientWardAdmission[i]);
