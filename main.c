@@ -36,6 +36,20 @@ int main()
     int patientDiscount[MAX_PATIENTS];
     int patientGrossTotal[MAX_PATIENTS];
     int patientFinalPayable[MAX_PATIENTS];
+    int tempTriage;
+    char tempName[50];
+    int tempAge;
+    int tempSpecialty;
+    int tempWardAdmission;
+    int tempWardID;
+    int tempDaysAdmitted;
+    int tempWaitingTime;
+    int tempBaseFee;
+    int tempEmergencySurcharge;
+    int tempWardCost;
+    int tempDiscount;
+    int tempGrossTotal;
+    int tempFinalPayable;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -188,6 +202,70 @@ int main()
 
     printf("Gross Total: LKR.%d\n", patientGrossTotal[i]);
     printf("Final Payable: LKR.%d\n", patientFinalPayable[i]);
+    }
+    for (int i = 0; i < patientCount - 1; i++)
+    {
+    for (int j = 0; j < patientCount - i - 1; j++)
+     {
+        if (patientTriage[j] < patientTriage[j + 1])
+        {
+            tempTriage = patientTriage[j];
+            patientTriage[j] = patientTriage[j + 1];
+            patientTriage[j + 1] = tempTriage;
+
+            strcpy(tempName, patientNames[j]);
+            strcpy(patientNames[j], patientNames[j + 1]);
+            strcpy(patientNames[j + 1], tempName);
+
+            tempAge = patientAges[j];
+            patientAges[j] = patientAges[j + 1];
+            patientAges[j + 1] = tempAge;
+
+            tempSpecialty = patientSpecialty[j];
+            patientSpecialty[j] = patientSpecialty[j + 1];
+            patientSpecialty[j + 1] = tempSpecialty;
+
+            tempWardAdmission = patientWardAdmission[j];
+            patientWardAdmission[j] = patientWardAdmission[j + 1];
+            patientWardAdmission[j + 1] = tempWardAdmission;
+
+            tempWardID = patientWardID[j];
+            patientWardID[j] = patientWardID[j + 1];
+            patientWardID[j + 1] = tempWardID;
+
+            tempDaysAdmitted = patientDaysAdmitted[j];
+            patientDaysAdmitted[j] = patientDaysAdmitted[j + 1];
+            patientDaysAdmitted[j + 1] = tempDaysAdmitted;
+
+            tempWaitingTime = patientWaitingTime[j];
+            patientWaitingTime[j] = patientWaitingTime[j + 1];
+            patientWaitingTime[j + 1] = tempWaitingTime;
+
+            tempBaseFee = patientBaseFee[j];
+            patientBaseFee[j] = patientBaseFee[j + 1];
+            patientBaseFee[j + 1] = tempBaseFee;
+
+            tempEmergencySurcharge = patientEmergencySurcharge[j];
+            patientEmergencySurcharge[j] = patientEmergencySurcharge[j + 1];
+            patientEmergencySurcharge[j + 1] = tempEmergencySurcharge;
+
+            tempWardCost = patientWardCost[j];
+            patientWardCost[j] = patientWardCost[j + 1];
+            patientWardCost[j + 1] = tempWardCost;
+
+            tempDiscount = patientDiscount[j];
+            patientDiscount[j] = patientDiscount[j + 1];
+            patientDiscount[j + 1] = tempDiscount;
+
+            tempGrossTotal = patientGrossTotal[j];
+            patientGrossTotal[j] = patientGrossTotal[j + 1];
+            patientGrossTotal[j + 1] = tempGrossTotal;
+
+            tempFinalPayable = patientFinalPayable[j];
+            patientFinalPayable[j] = patientFinalPayable[j + 1];
+            patientFinalPayable[j + 1] = tempFinalPayable;
+        }
+     }
     }
 
     return 0;
