@@ -50,6 +50,9 @@ int main()
     int tempDiscount;
     int tempGrossTotal;
     int tempFinalPayable;
+    int normalCount = 0;
+    int urgentCount = 0;
+    int criticalCount = 0;
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -203,6 +206,21 @@ int main()
     printf("Gross Total: LKR.%d\n", patientGrossTotal[i]);
     printf("Final Payable: LKR.%d\n", patientFinalPayable[i]);
     }
+    for (int i = 0; i < patientCount; i++)
+    {
+    if (patientTriage[i] == 1)
+    {
+        normalCount++;
+    }
+    else if (patientTriage[i] == 2)
+    {
+        urgentCount++;
+    }
+    else if (patientTriage[i] == 3)
+    {
+        criticalCount++;
+    }
+    }
     for (int i = 0; i < patientCount - 1; i++)
     {
     for (int j = 0; j < patientCount - i - 1; j++)
@@ -277,6 +295,10 @@ int main()
      printf("Age: %d\n", patientAges[i]);
      printf("Triage Level: %d\n", patientTriage[i]);
      }
+     printf("\n--- Performance Report ---\n");
+     printf("Normal Patients: %d\n", normalCount);
+     printf("Urgent Patients: %d\n", urgentCount);
+     printf("Critical Patients: %d\n", criticalCount);
 
     return 0;
 }
