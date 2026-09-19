@@ -34,6 +34,8 @@ int main()
     int patientEmergencySurcharge[MAX_PATIENTS];
     int patientWardCost[MAX_PATIENTS];
     int patientDiscount[MAX_PATIENTS];
+    int patientGrossTotal[MAX_PATIENTS];
+    int patientFinalPayable[MAX_PATIENTS];
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -179,13 +181,14 @@ int main()
     patientDiscount[i] = 0;
     }
     printf("Age Subsidy Discount: LKR.%d\n", patientDiscount[i]);
+
+    patientGrossTotal[i] =patientBaseFee[i] + patientEmergencySurcharge[i] + patientWardCost[i];
+
+    patientFinalPayable[i] =patientGrossTotal[i] - patientDiscount[i];
+
+    printf("Gross Total: LKR.%d\n", patientGrossTotal[i]);
+    printf("Final Payable: LKR.%d\n", patientFinalPayable[i]);
     }
-
-    grossTotal = baseFee + emergencySurcharge + wardCost;
-    finalPayable = grossTotal - discount;
-
-    printf("Gross Total: Rs.%d\n", grossTotal);
-    printf("Final Payable: Rs.%d\n", finalPayable);
 
     return 0;
 }
