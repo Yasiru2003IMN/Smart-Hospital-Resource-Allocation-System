@@ -29,6 +29,7 @@ int main()
     int patientWardAdmission[MAX_PATIENTS];
     int patientWardID[MAX_PATIENTS];
     int patientDaysAdmitted[MAX_PATIENTS];
+    int patientWaitingTime[MAX_PATIENTS];
 
 
     printf("Smart Hospital & Resource Allocation System\n");
@@ -82,9 +83,8 @@ int main()
     {
     averageTime = 30;
     }
-    waitingTime = queueCount * averageTime;
-    queueCount++;
-    printf("Please Waiting: %d minutes\n", waitingTime);
+    patientWaitingTime[i] = i*averageTime;
+    printf("Please Waiting: %d minutes\n", patientWaitingTime[i]);
 
 
     if (patientSpecialty[i] == 1)
